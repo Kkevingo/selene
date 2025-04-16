@@ -1121,7 +1121,6 @@ class Config:
     logging_actual_webelements_count_limit: Optional[int] = None
     """If set, limits the number of HTML elements logged in error messages when log_outer_html_on_failure is True.
     When the collection size exceeds this limit, only the specified number of elements will be logged followed by a summary.
-    
     If None (default), all elements will be logged.
     """
 
