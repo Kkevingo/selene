@@ -1117,6 +1117,14 @@ class Config:
     - it might add too much of noise to the logs
     - will not work on mobile app tests because under the hood - uses JavaScript
     """
+
+    logging_actual_webelements_count_limit: Optional[int] = None
+    """If set, limits the number of HTML elements logged in error messages when log_outer_html_on_failure is True.
+    When the collection size exceeds this limit, only the specified number of elements will be logged followed by a summary.
+    
+    If None (default), all elements will be logged.
+    """
+
     set_value_by_js: bool = False
     """A flag to indicate whether to use JavaScript to set value of an element
     on `element.set_value(value)` for purposes of speeding up the test execution,
