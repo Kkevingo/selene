@@ -1116,12 +1116,20 @@ class Collection(_WaitingConfiguredEntity, Iterable[Element]):
                 """
                 TODO: move it support.shared.config
                 """
-                outer_htmls = [query.outer_html(element) for element in cached]
+                # cached_elements = [element for element in cached]
+                total_elements = len(cached)
+
+                limit = self.config.logging_actual_webelements_count_limit 
+                if limit is not None and total_elements > limit:
+                    outer_htmls = [query.outer_html(element) for element in cached[:limit]]
+                    outer_htmls.append(f'... and {total_elements - limit} more')
+                else:
+                    outer_htmls = [query.outer_html(element) for element in cached]
 
                 raise AssertionError(
                     f'\n\tCannot find element by condition «{condition}» '
                     f'\n\tAmong {self}'
-                    f'\n\tActual webelements collection:'
+                    f'\n\tActual webelements collection ({total_elements} elements):'
                     f'\n\t{outer_htmls}'
                 )  # TODO: isn't it better to print it all the time via hook, like for Element?
             else:
