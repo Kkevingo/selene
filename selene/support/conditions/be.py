@@ -30,6 +30,7 @@ absent_in_dom = match.absent_in_dom
 hidden_in_dom = match.hidden_in_dom
 hidden = match.hidden
 visible = match.visible
+not_overlapped = match.not_overlapped
 
 selected = match.selected
 
@@ -39,8 +40,6 @@ disabled = match.disabled
 checked = match.checked
 
 clickable = match.clickable
-
-not_overlapped = match.not_overlapped
 
 blank = match.blank
 
