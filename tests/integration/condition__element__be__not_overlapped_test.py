@@ -45,7 +45,6 @@ def test_not_overlapped__passed_and_failed(session_browser):
     # not overlapped?
     # - not overlapped passes
     not_overlapped.should(be.not_overlapped)
-    # not_overlapped.should(match.not_overlapped)
 
     # Show overlay
     browser.execute_script("document.getElementById('overlay').style.display = 'block'")
