@@ -1120,7 +1120,9 @@ class Collection(_WaitingConfiguredEntity, Iterable[Element]):
                 limit = self.config.logging_actual_webelements_count_limit
 
                 if limit is not None and total_elements > limit:
-                    outer_htmls = [query.outer_html(element) for element in cached[:limit]]
+                    outer_htmls = [
+                        query.outer_html(element) for element in cached[:limit]
+                    ]
                     outer_htmls.append(f'... and {total_elements - limit} more')
                 else:
                     outer_htmls = [query.outer_html(element) for element in cached]
