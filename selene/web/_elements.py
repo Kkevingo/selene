@@ -1128,8 +1128,8 @@ class Collection(_WaitingConfiguredEntity, Iterable[Element]):
                 raise AssertionError(
                     f'\n\tCannot find element by condition «{condition}» '
                     f'\n\tAmong {self}'
-                    f'\n\tActual webelements collection:'
                     f'\n\tTotal number of webelements: {total_elements}'
+                    f'\n\tActual webelements collection:'
                     f'\n\t{outer_htmls}'
                 )  # TODO: isn't it better to print it all the time via hook, like for Element?
             else:
