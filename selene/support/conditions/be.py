@@ -40,6 +40,8 @@ checked = match.checked
 
 clickable = match.clickable
 
+not_overlapped = match.not_overlapped
+
 blank = match.blank
 
 
