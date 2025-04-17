@@ -168,15 +168,21 @@ class _WaitingConfiguredEntity(_ConfiguredEntity, Assertable, Matchable):
     # --- Assertable --- #
 
     def should(self, condition: Condition[Self]) -> Self:
+        if not isinstance(condition, Condition):
+            raise ValueError('condition must be an instance of Condition')
         self.wait.for_(condition)
         return self
 
     # --- Matchable --- #
 
     def wait_until(self, condition: Condition[Self]) -> bool:
+        if not isinstance(condition, Condition):
+            raise ValueError('condition must be an instance of Condition')
         return self.wait.until(condition)
 
     def matching(self, condition: Condition[Self]) -> bool:
+        if not isinstance(condition, Condition):
+            raise ValueError('condition must be an instance of Condition')
         return condition.predicate(self)
 
 
