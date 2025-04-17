@@ -353,10 +353,9 @@ selected: Condition[Element] = Match(
 
 not_overlapped: Condition[Element] = Match(
     'is not overlapped',
-    by=lambda element: (
-        element._actual_not_overlapped_webelement and True
-    ),
+    by=lambda element: (element._actual_not_overlapped_webelement and True),
 )
+
 
 class js:
     # todo: how will it work for mobile? – it will not work:)
